@@ -14,10 +14,14 @@
 ;; download auctex
 (use-package auctex
   :ensure t
-  :hook (LaTex-mode) .
+  :hook
+  (LaTex-mode) .
   (lambda ()
     (push (list 'output-pdf "Zathura")
 	  TeX-view-program-selection)))
+
+;; let preview in latex
+(setq org-preview-latex-default-process 'dvisvgm)
 
 ;; add reference at start
 
@@ -373,7 +377,8 @@ See Info node `(elisp)Customization Types'."
 
 ;;set the roam folder
 (setq org-roam-directory (file-truename "/home/phihungnguyen/quartz/content/"))
-
+;;file head leads me to the diretory where the org roam files are created
+;;hugo base + content + section for where to be saved
 ;;if i create a file here
 (setq org-roam-capture-templates
       '(("o" "moc" plain
@@ -397,7 +402,7 @@ See Info node `(elisp)Customization Types'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-roam-ql org-roam-ui org-download ox-hugo all-the-icons dashboard which-key-posframe which-key yasnippet-snippets yasnippet-classic-snippets use-package org-roam-bibtex emacsql-sqlite-module emacsql-sqlite auctex)))
+   '(latex-math-preview org-roam-ql org-roam-ui org-download ox-hugo all-the-icons dashboard which-key-posframe which-key yasnippet-snippets yasnippet-classic-snippets use-package org-roam-bibtex emacsql-sqlite-module emacsql-sqlite auctex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

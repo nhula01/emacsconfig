@@ -14,10 +14,16 @@
 ;; download auctex
 (use-package auctex
   :ensure t
-  :hook (LaTex-mode) .
+  :hook
+  (LaTex-mode) .
   (lambda ()
     (push (list 'output-pdf "Zathura")
 	  TeX-view-program-selection)))
+
+
+;;download latex on terminal and latex-dvi preview on emacs
+;; let preview in latex cc cx cl
+(setq org-preview-latex-default-process 'dvisvgm)
 
 ;; add reference at start
 
@@ -325,9 +331,9 @@ See Info node `(elisp)Customization Types'."
 
 
 ;;custom theme
-(set-frame-parameter (selected-frame) 'alpha '(70 70))
+(set-frame-parameter (selected-frame) 'alpha '(80 80))
 
-(add-to-list 'default-frame-alist '(alpha 60 60))
+(add-to-list 'default-frame-alist '(alpha 80 80))
 
 (set-face-attribute 'default nil :background "black"
 		    :foreground "white" :height 160)
@@ -398,7 +404,7 @@ See Info node `(elisp)Customization Types'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-roam-ql org-roam-ui org-download ox-hugo all-the-icons dashboard which-key-posframe which-key yasnippet-snippets yasnippet-classic-snippets use-package org-roam-bibtex emacsql-sqlite-module emacsql-sqlite auctex)))
+   '(preview-dvisvgm latex-math-preview org-roam-ql org-roam-ui org-download ox-hugo all-the-icons dashboard which-key-posframe which-key yasnippet-snippets yasnippet-classic-snippets use-package org-roam-bibtex emacsql-sqlite-module emacsql-sqlite auctex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
