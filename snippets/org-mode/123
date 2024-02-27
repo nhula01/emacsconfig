@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 123
+# key: 123
+# --
+
+
+print 123

@@ -1,0 +1,10 @@
+cd ..
+hugo -t hugo-PaperMod
+la
+ls
+cd public
+la
+ls
+git add .
+git commit -m "push two problems"
+git push origin main
